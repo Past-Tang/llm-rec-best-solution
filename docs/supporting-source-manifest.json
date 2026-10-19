@@ -1,0 +1,37 @@
+[
+  {
+    "source": "archived_preliminary_workspace/07_接管/experiments/merge_model_weights.py",
+    "destination": "07_接管/experiments/merge_model_weights.py",
+    "source_sha256": "6ea8152e35e04b9dabf36f9bd84bf49af8057e06afd62d48954c6bc04c90d682",
+    "export_sha256": "6ea8152e35e04b9dabf36f9bd84bf49af8057e06afd62d48954c6bc04c90d682",
+    "note": "supporting source snapshot, not independently tied to final experiment"
+  },
+  {
+    "source": "archived_preliminary_workspace/07_接管/experiments/audit_recovery_run.py",
+    "destination": "07_接管/experiments/audit_recovery_run.py",
+    "source_sha256": "00e822136790700f5131f463e00efad2be54c6eac94c6df7d259d7173dc0a71a",
+    "export_sha256": "00e822136790700f5131f463e00efad2be54c6eac94c6df7d259d7173dc0a71a",
+    "note": "supporting source snapshot, not independently tied to final experiment"
+  },
+  {
+    "source": "archived_preliminary_workspace/07_接管/experiments/run_training.py",
+    "destination": "07_接管/experiments/run_training.py",
+    "source_sha256": "c97c086e62bb4478967f2467095454f4d3ae71f1dbd9922bde83c740d4810775",
+    "export_sha256": "c97c086e62bb4478967f2467095454f4d3ae71f1dbd9922bde83c740d4810775",
+    "note": "supporting source snapshot, not independently tied to final experiment"
+  },
+  {
+    "source": "archived_preliminary_workspace/07_接管/experiments/llamafactory_cli_rescue_bear.py",
+    "destination": "07_接管/experiments/llamafactory_cli_rescue_bear.py",
+    "source_sha256": "699bccb053cf463d5fc038f66951831cc11b0f1c3ba985f06464d518ba6d1a63",
+    "export_sha256": "699bccb053cf463d5fc038f66951831cc11b0f1c3ba985f06464d518ba6d1a63",
+    "note": "supporting source snapshot, not independently tied to final experiment"
+  },
+  {
+    "source": "archived_preliminary_workspace/07_接管/experiments/liger_rescue_bear_patch.py",
+    "destination": "07_接管/experiments/liger_rescue_bear_patch.py",
+    "source_sha256": "5780d55700b437bd03e93f4817c2d1403aed137f4858566d43013eeffb8d82b5",
+    "export_sha256": "5780d55700b437bd03e93f4817c2d1403aed137f4858566d43013eeffb8d82b5",
+    "note": "supporting source snapshot, not independently tied to final experiment"
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "source": "sanitized archived source patches; original session content excluded",
+  "changes": [
+    {
+      "file": "07_接管/experiments/compose_selective_lm_head_task_vector.py",
+      "operation": "Add",
+      "timestamp": "2026-07-29T11:58:49.202Z"
+    },
+    {
+      "file": "07_接管/experiments/liger_frozen_head_patch.py",
+      "operation": "Add",
+      "timestamp": "2026-07-29T13:05:34.957Z"
+    },
+    {
+      "file": "07_接管/experiments/frozen_head_liger_site/sitecustomize.py",
+      "operation": "Add",
+      "timestamp": "2026-07-29T13:05:34.957Z"
+    },
+    {
+      "file": "07_接管/experiments/run_frozen_head_training.py",
+      "operation": "Add",
+      "timestamp": "2026-07-29T13:05:34.957Z"
+    },
+    {
+      "file": "07_接管/experiments/configs/exp182_headfix_reproduction_step10_fp16_xformers_ligerfix.yaml",
+      "operation": "Add",
+      "timestamp": "2026-07-29T13:05:34.957Z"
+    },
+    {
+      "file": "07_接管/experiments/finalize_exp182_ligerfix.py",
+      "operation": "Add",
+      "timestamp": "2026-07-29T13:10:40.416Z"
+    },
+    {
+      "file": "07_接管/experiments/run_frozen_head_training.py",
+      "operation": "Update",
+      "timestamp": "2026-07-29T13:13:34.212Z"
+    },
+    {
+      "file": "07_接管/experiments/run_frozen_head_training.py",
+      "operation": "Update",
+      "timestamp": "2026-07-29T13:14:51.185Z"
+    }
+  ],
+  "unresolved_updates": [],
+  "sha256": {
+    "07_接管/experiments/compose_selective_lm_head_task_vector.py": "7ca5f74bed026094d2b0df5b2b9a8e6d1082cd10cb639039e4df778819233d5c",
+    "07_接管/experiments/liger_frozen_head_patch.py": "f36ad2faf2ca7a50ecbdd9c7b0175890834853647c93dc0fc2f9d28b8da5dbec",
+    "07_接管/experiments/frozen_head_liger_site/sitecustomize.py": "ce325b46c766f561caac735464eb5b3018e1294526bf51b9791ae565b496c6c3",
+    "07_接管/experiments/run_frozen_head_training.py": "a5d437bea06a8e287bcb6807bf3006e206f96b0b516cfca3e830ae161cfb083f",
+    "07_接管/experiments/configs/exp182_headfix_reproduction_step10_fp16_xformers_ligerfix.yaml": "e3bc3b1ed304c4ad8a3bd251309423ad7fd1f5aa6887e1701f9a53f26f81a7c7",
+    "07_接管/experiments/finalize_exp182_ligerfix.py": "834b22aa161fd4cac8708b6774aa77ae3a2f6e719e4bbe4b81ca87c0907f4361"
+  }
+}

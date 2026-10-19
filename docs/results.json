@@ -1,0 +1,25 @@
+{
+  "source": "archived FINAL_SPRINT_RESULT_20260730.json",
+  "source_sha256": "ecfce536c6c9bc6ff7beb130dd7f8c1d80edd6fdf3457ec1f4e1899288a4af37",
+  "best_experiment": "EXP-201",
+  "model_experiment": "EXP-182",
+  "score": 1.0716429387157187,
+  "components": {
+    "r0": 0.2452961672473868,
+    "r1": 0.14655643689584122,
+    "r2": 0.5244,
+    "r3": 0.1553903345724907
+  },
+  "status": "SUCCEEDED",
+  "reevaluations": [
+    {
+      "experiment": "EXP-199",
+      "score": 1.0704834485560581
+    },
+    {
+      "experiment": "EXP-201",
+      "score": 1.0716429387157187
+    }
+  ],
+  "verification": "archived evidence only; no new evaluation"
+}
