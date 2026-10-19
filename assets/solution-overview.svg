@@ -46,7 +46,7 @@
 <text x="852" y="387" font-size="17" fill="#19334a" font-weight="400" text-anchor="start">自回归生成</text>
 <text x="852" y="414" font-size="17" fill="#19334a" font-weight="400" text-anchor="start">SID 序列或任务文本</text>
 <text x="852" y="470" font-size="17" fill="#19334a" font-weight="400" text-anchor="start">最终模型：EXP-182</text>
-<text x="852" y="505" font-size="17" fill="#536b7c" font-weight="400" text-anchor="start">最高评测记录：EXP-201</text>
+<text x="852" y="505" font-size="17" fill="#536b7c" font-weight="400" text-anchor="start">评测记录：EXP-201</text>
 <path d="M388,355 L436,355" fill="none" stroke="#536b7c" stroke-width="2" marker-end="url(#arrow)"/>
 <path d="M778,355 L826,355" fill="none" stroke="#536b7c" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="32" y="572" width="1136" height="59" rx="12" fill="#eaf0f5" stroke="#cedce5"/>
