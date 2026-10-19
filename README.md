@@ -1,14 +1,10 @@
 # LLM-Rec：输出头微调与选择性参数合成
 
-**简体中文（默认）** | [English](README.en.md)
-
 快手探索者 LLM-Rec 挑战赛要求一个模型同时理解物料、分析用户兴趣、生成推荐结果，并保留通用知识能力。本方案基于 **OneReason-0.8B**，把最终调整集中在语义 ID 的输出层：先冻结主干、训练输出头，再把训练得到的差分以 **−0.5** 的系数写入目标模型的指定行。
 
 最终模型为 **EXP-182**，最高正式评测分数为 **1.0716429387157187**，对应 EXP-201 评测记录。合成在离线阶段完成，推理时使用单个模型。
 
-![输出头训练、选择性合成与最终推理的整体架构](assets/solution-overview.png)
-
-[查看矢量图](assets/solution-overview.svg)
+![输出头训练、选择性合成与最终推理的整体架构](assets/solution-overview.svg)
 
 | 项目 | 最终方案 |
 |---|---|
@@ -70,7 +66,7 @@ $$
 
 Transformer 主干负责把输入上下文编码成隐藏状态，输出头负责把这个状态映射到词表。调整 SID 所在的权重行，就能改变这些 token 在当前上下文中的分数。最终方案把参数变更限制在这一位置。
 
-**训练时整个 `lm_head` 可训练，合成时只提取其中的 a、b、c 行**。训练得到的其他输出头变化不会写入最终模型。
+这里需要区分两个范围：**训练时整个 `lm_head` 可训练，合成时只提取其中的 a、b、c 行**。训练得到的其他输出头变化不会写入最终模型。
 
 ### 三个模型各自提供什么
 
@@ -80,7 +76,7 @@ Transformer 主干负责把输入上下文编码成隐藏状态，输出头负�
 | Expert | 从 Ancestor 出发，训练输出头 10 步后的模型 | headfix + Liger 修复后的训练结果 |
 | Target | 提供最终模型的主干和原始输出头 | EXP-174 |
 
-从 Expert 的权重中减去 Ancestor 的权重，得到本次训练的更新方向，再将它应用到 Target。Target 不必与 Ancestor 相同。
+Ancestor 与 Expert 形成一对，二者相减得到本次训练产生的更新方向。Target 是这个方向的应用对象，它不需要等于 Ancestor。
 
 最终使用负系数 $-0.5$，相当于沿更新方向反向移动半步。训练阶段仍然正常最小化交叉熵损失；反向和缩放发生在离线合成阶段。这个系数是最终选用的模型配置，不代表反向更新对其他任务或模型也一定有效。
 
@@ -88,7 +84,7 @@ Transformer 主干负责把输入上下文编码成隐藏状态，输出头负�
 
 ### 训练输入与冻结范围
 
-训练使用 `takeover_r0_cbalanced_replay_v1` 数据和 `qwen3_nothink` 模板，从 aligned-replay 模型开始进行监督微调。这轮训练用于计算输出头的更新方向，最终部署的模型主体仍由 Target 提供。
+训练使用 `takeover_r0_cbalanced_replay_v1` 数据和 `qwen3_nothink` 模板，从 aligned-replay 模型开始进行监督微调。数据承担生成输出头更新方向的作用，最终部署的模型主体仍由 Target 提供。
 
 配置将可训练 Transformer 层数设为 0，并将 `lm_head` 列为额外可训练模块。主干权重冻结后，优化器只更新输出头。多个训练样本通过 packing 组成长序列，配置同时启用 neat packing。
 
@@ -120,7 +116,7 @@ _input = _input.detach().requires_grad_(True)
 
 这使融合算子能够计算输出头梯度。`detach()` 切断了与前面计算图的联系，主干参数仍处于冻结状态。
 
-[训练入口](07_接管/experiments/run_frozen_head_training.py)通过 `sitecustomize` 把[梯度补丁](07_接管/experiments/liger_frozen_head_patch.py)加载到训练进程，并检查对应 Liger 源文件版本。补丁处理的是冻结主干后融合算子的梯度计算，不改变交叉熵目标。
+[训练入口](07_接管/experiments/run_frozen_head_training.py)通过 `sitecustomize` 把[梯度补丁](07_接管/experiments/liger_frozen_head_patch.py)加载到训练进程，并检查对应 Liger 源文件版本。这个处理服务于当前冻结方式与算子的组合，不改变交叉熵目标。
 
 ## 选择性参数合成
 
@@ -151,9 +147,7 @@ $$
 | c | `[168053, 176245)` | 8,192 |
 | 合计 | `[151669, 176245)` | **24,576** |
 
-![输出头行选择和参数差分合成](assets/head-composition.png)
-
-[查看矢量图](assets/head-composition.svg)
+![输出头行选择和参数差分合成](assets/head-composition.svg)
 
 假设某个被选中位置的 Target 参数为 0.20，Expert 相对 Ancestor 增加了 0.04，最终值就是 `0.20 − 0.5 × 0.04 = 0.18`。这个演算只说明差分方向与系数，没有使用实际模型参数。
 
@@ -165,9 +159,9 @@ $$
 \Delta z_j = -0.5\Delta W_j h,\qquad j\in S.
 $$
 
-logit 的变化取决于权重差分与当前上下文表示的内积。系数为负并不意味着所有 SID 的分数都会降低：内积本身可能为正，也可能为负。
+这个式子说明，效果取决于权重差分与当前上下文表示的内积。系数为负并不意味着所有 SID 的分数都会降低：内积本身可能为正，也可能为负。
 
-未选中行在同一个隐藏状态下的原始 logit 不变，但 softmax 的归一化分母会受到其他 token 分数变化的影响。生成过程又是自回归的，一旦选择了不同 token，后续上下文也会改变。只改部分输出头参数，仍可能影响模型的其他输出概率。
+未选中行在同一个隐藏状态下的原始 logit 不变，但 softmax 的归一化分母会受到其他 token 分数变化的影响。生成过程又是自回归的，一旦选择了不同 token，后续上下文也会改变。因此，“只改输出头的一部分行”描述的是参数范围，不能理解成模型其他输出概率完全不变。
 
 ### 数值计算与导出
 
@@ -193,9 +187,7 @@ logit 的变化取决于权重差分与当前上下文表示的内积。系数�
 | R2：多域推荐，四域合计 | 0.5244 |
 | R3：世界知识 | 0.1553903345724907 |
 
-![最终模型各任务组的加权贡献](assets/evaluation.png)
-
-[查看矢量图](assets/evaluation.svg)
+![最终模型各任务组的加权贡献](assets/evaluation.svg)
 
 总分为八个子任务的加权贡献之和，上表将其汇总到 R0–R3 四组。R0 的权重为 17.6；R1 两项各为 0.3；R2 视频、电商、广告、直播依次为 9.6、3.4、1.4、0.9；R3 为 0.3。分项已经乘过权重，不能当作原始准确率，也不能根据柱高判断某个模块带来的增益。
 
@@ -214,7 +206,7 @@ logit 的变化取决于权重差分与当前上下文表示的内积。系数�
 | [merge_model_weights.py](07_接管/experiments/merge_model_weights.py) | 模型读取、目录约定和兼容性检查 |
 | [finalize_exp182_ligerfix.py](07_接管/experiments/finalize_exp182_ligerfix.py) | 训练步数与最终模型检查 |
 
-运行合成器前，三个目录应包含相互兼容的 `model.safetensors`、配置与 tokenizer 文件，路径需满足辅助模块的工作区约定。
+合成器的调用形式如下。三个目录应包含相互兼容的 `model.safetensors`、配置与 tokenizer 文件，路径需满足辅助模块的工作区约定。
 
 ```bash
 python 07_接管/experiments/compose_selective_lm_head_task_vector.py \
