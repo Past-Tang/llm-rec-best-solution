@@ -70,7 +70,7 @@ $$
 
 Transformer 主干负责把输入上下文编码成隐藏状态，输出头负责把这个状态映射到词表。调整 SID 所在的权重行，就能改变这些 token 在当前上下文中的分数。最终方案把参数变更限制在这一位置。
 
-这里需要区分两个范围：**训练时整个 `lm_head` 可训练，合成时只提取其中的 a、b、c 行**。训练得到的其他输出头变化不会写入最终模型。
+**训练时整个 `lm_head` 可训练，合成时只提取其中的 a、b、c 行**。训练得到的其他输出头变化不会写入最终模型。
 
 ### 三个模型各自提供什么
 
@@ -80,7 +80,7 @@ Transformer 主干负责把输入上下文编码成隐藏状态，输出头负�
 | Expert | 从 Ancestor 出发，训练输出头 10 步后的模型 | headfix + Liger 修复后的训练结果 |
 | Target | 提供最终模型的主干和原始输出头 | EXP-174 |
 
-Ancestor 与 Expert 形成一对，二者相减得到本次训练产生的更新方向。Target 是这个方向的应用对象，它不需要等于 Ancestor。
+从 Expert 的权重中减去 Ancestor 的权重，得到本次训练的更新方向，再将它应用到 Target。Target 不必与 Ancestor 相同。
 
 最终使用负系数 $-0.5$，相当于沿更新方向反向移动半步。训练阶段仍然正常最小化交叉熵损失；反向和缩放发生在离线合成阶段。这个系数是最终选用的模型配置，不代表反向更新对其他任务或模型也一定有效。
 
@@ -88,7 +88,7 @@ Ancestor 与 Expert 形成一对，二者相减得到本次训练产生的更新
 
 ### 训练输入与冻结范围
 
-训练使用 `takeover_r0_cbalanced_replay_v1` 数据和 `qwen3_nothink` 模板，从 aligned-replay 模型开始进行监督微调。数据承担生成输出头更新方向的作用，最终部署的模型主体仍由 Target 提供。
+训练使用 `takeover_r0_cbalanced_replay_v1` 数据和 `qwen3_nothink` 模板，从 aligned-replay 模型开始进行监督微调。这轮训练用于计算输出头的更新方向，最终部署的模型主体仍由 Target 提供。
 
 配置将可训练 Transformer 层数设为 0，并将 `lm_head` 列为额外可训练模块。主干权重冻结后，优化器只更新输出头。多个训练样本通过 packing 组成长序列，配置同时启用 neat packing。
 
@@ -120,7 +120,7 @@ _input = _input.detach().requires_grad_(True)
 
 这使融合算子能够计算输出头梯度。`detach()` 切断了与前面计算图的联系，主干参数仍处于冻结状态。
 
-[训练入口](07_接管/experiments/run_frozen_head_training.py)通过 `sitecustomize` 把[梯度补丁](07_接管/experiments/liger_frozen_head_patch.py)加载到训练进程，并检查对应 Liger 源文件版本。这个处理服务于当前冻结方式与算子的组合，不改变交叉熵目标。
+[训练入口](07_接管/experiments/run_frozen_head_training.py)通过 `sitecustomize` 把[梯度补丁](07_接管/experiments/liger_frozen_head_patch.py)加载到训练进程，并检查对应 Liger 源文件版本。补丁处理的是冻结主干后融合算子的梯度计算，不改变交叉熵目标。
 
 ## 选择性参数合成
 
@@ -165,9 +165,9 @@ $$
 \Delta z_j = -0.5\Delta W_j h,\qquad j\in S.
 $$
 
-这个式子说明，效果取决于权重差分与当前上下文表示的内积。系数为负并不意味着所有 SID 的分数都会降低：内积本身可能为正，也可能为负。
+logit 的变化取决于权重差分与当前上下文表示的内积。系数为负并不意味着所有 SID 的分数都会降低：内积本身可能为正，也可能为负。
 
-未选中行在同一个隐藏状态下的原始 logit 不变，但 softmax 的归一化分母会受到其他 token 分数变化的影响。生成过程又是自回归的，一旦选择了不同 token，后续上下文也会改变。因此，“只改输出头的一部分行”描述的是参数范围，不能理解成模型其他输出概率完全不变。
+未选中行在同一个隐藏状态下的原始 logit 不变，但 softmax 的归一化分母会受到其他 token 分数变化的影响。生成过程又是自回归的，一旦选择了不同 token，后续上下文也会改变。只改部分输出头参数，仍可能影响模型的其他输出概率。
 
 ### 数值计算与导出
 
@@ -214,7 +214,7 @@ $$
 | [merge_model_weights.py](07_接管/experiments/merge_model_weights.py) | 模型读取、目录约定和兼容性检查 |
 | [finalize_exp182_ligerfix.py](07_接管/experiments/finalize_exp182_ligerfix.py) | 训练步数与最终模型检查 |
 
-合成器的调用形式如下。三个目录应包含相互兼容的 `model.safetensors`、配置与 tokenizer 文件，路径需满足辅助模块的工作区约定。
+运行合成器前，三个目录应包含相互兼容的 `model.safetensors`、配置与 tokenizer 文件，路径需满足辅助模块的工作区约定。
 
 ```bash
 python 07_接管/experiments/compose_selective_lm_head_task_vector.py \
