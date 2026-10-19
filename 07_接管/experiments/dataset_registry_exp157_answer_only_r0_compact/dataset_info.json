@@ -1,0 +1,13 @@
+{
+  "exp157_answer_only_r0_compact_v2": {
+    "columns": {
+      "history": "history",
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "system": "system"
+    },
+    "file_name": "/workspace/LLM-Rec/07_接管/experiments/data/exp157_answer_only_r0_compact_v2.jsonl",
+    "formatting": "alpaca"
+  }
+}

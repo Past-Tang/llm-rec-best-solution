@@ -1,0 +1,105 @@
+{
+  "anchor": {
+    "additional_r0_hits_if_non_r0_fixed": 4,
+    "audit": {
+      "path": "/workspace/LLM-Rec/07_接管/experiments/runs/exp136_public091_v66_v100_16k_ga8_v1/audit_manifest.json",
+      "sha256": "c0e0d8c84d24de11a058e2344aa37298f4a6150b8acc6d306267536d893c4a0f",
+      "size_bytes": 8579
+    },
+    "experiment": "EXP-136",
+    "formal_receipt": {
+      "path": "/workspace/LLM-Rec/07_接管/platform/receipts/official_exp136_v66_20260724_a_metrics.json",
+      "sha256": "cbf9da748b92c97305f09abd388497e72b5c68995e16586ffab0f9e60e1a09f5",
+      "size_bytes": 1826
+    },
+    "formal_score": 0.9876550018457082,
+    "model": {
+      "path": "/workspace/LLM-Rec/07_接管/experiments/outputs/onereason_0.8b_exp136_public091_v66_rslora_loraplus_r128_a16_xformers_16k_ga8_fp16_merged_bf16/model.safetensors",
+      "sha256": "2c6322aeb3e0645bd0cb2234580b5e7ed4007456d9931857ce472f67f15d36a5",
+      "size_bytes": 1602902832
+    },
+    "model_dir": "/workspace/LLM-Rec/07_接管/experiments/outputs/onereason_0.8b_exp136_public091_v66_rslora_loraplus_r128_a16_xformers_16k_ga8_fp16_merged_bf16",
+    "model_id": "archived-model-id",
+    "upload": {
+      "path": "/workspace/LLM-Rec/07_接管/platform/upload_receipts/takeover_exp136_v66_public091_16k_ga8_20260724.json",
+      "sha256": "7df118f7725de76896e22cac0c32f0853b222d4dee084bc5024c6944270ff4ac",
+      "size_bytes": 1075
+    }
+  },
+  "experiment": "EXP-157",
+  "locks": {
+    "design": {
+      "path": "/workspace/LLM-Rec/07_接管/experiments/preregistrations/exp157_answer_only_r0_compact_design.json",
+      "sha256": "acbb4b5c8134b72bc2dc966c24ec169f527756edbb00c26e54e964ce548128b0",
+      "size_bytes": 5871
+    },
+    "full_config": {
+      "path": "/workspace/LLM-Rec/07_接管/experiments/configs/exp157_answer_only_r0_continuation_r64_a64_xformers_16k_ga8_fp16.yaml",
+      "sha256": "f1729d70334dcf568ab93e75e706e52d9cf21c35526ba6ee4142eb2315393c24",
+      "size_bytes": 1243
+    },
+    "full_dataset": {
+      "path": "/workspace/LLM-Rec/07_接管/experiments/data/exp157_answer_only_r0_compact_v2.jsonl",
+      "sha256": "78ee84eefeadb677b8f627073a71fe100223c85fc684213a4ea77da857653ef9",
+      "size_bytes": 380726170
+    },
+    "gate": {
+      "path": "/workspace/LLM-Rec/07_接管/autopilot/exp157_receipt_bound_gate.json",
+      "sha256": "2c41d343e38564e95c96aca508fde669d8041615424074411938f3264937a8ea",
+      "size_bytes": 4756
+    },
+    "materialization": {
+      "path": "/workspace/LLM-Rec/07_接管/experiments/preregistrations/exp157_answer_only_r0_continuation_launch.json",
+      "sha256": "a2ee2c811b4cba0c82085aa2e8c6e24bb05ce1c414a42850bcd836aef71451f5",
+      "size_bytes": 4522
+    },
+    "smoke_config": {
+      "path": "/workspace/LLM-Rec/07_接管/experiments/configs/smoke_exp157_answer_only_r0_continuation_r64_a64_xformers_fp16.yaml",
+      "sha256": "db28ea90ccd4ed77ea3930b5ca1faabf174934f525b2cede4dc8cbc4ee5ca94b",
+      "size_bytes": 1130
+    },
+    "smoke_dataset": {
+      "path": "/workspace/LLM-Rec/07_接管/experiments/data/exp157_answer_only_r0_smoke_v2.jsonl",
+      "sha256": "846ac973c0a76c23240b0599d58edff86a5bb737c934e02a350e7768ba8fc622",
+      "size_bytes": 87036
+    },
+    "smoke_evidence": {
+      "path": "/workspace/LLM-Rec/07_接管/experiments/runs/exp157_answer_only_r0_continuation_v100_v1/smoke_evidence.json",
+      "sha256": "4d9a1156f95649069933e92e8bf6e6e825415af03a67e5688440e73e1f2e51a4",
+      "size_bytes": 963
+    },
+    "target_mass": {
+      "path": "/workspace/LLM-Rec/07_接管/analysis/generated/exp157_answer_only_r0_target_mass_v2.json",
+      "sha256": "c20ffbb9d87ebb88db97b6eeffbac55ef27f06e51dcf5f00db5192f4e1a768c0",
+      "size_bytes": 1402
+    }
+  },
+  "recipe": {
+    "attention": "xFormers",
+    "checkpoint_policy": "Save at each epoch so one-epoch and two-epoch adapters remain independently auditable.",
+    "cutoff_len": 16384,
+    "epochs": 2,
+    "gradient_accumulation_steps": 8,
+    "initializer": "Fresh LoRA continuation from the receipt-selected full BF16 merged anchor; never train from a bare adapter directory.",
+    "learning_rate": 5e-06,
+    "liger": true,
+    "lora_alpha": 64,
+    "lora_dropout": 0.05,
+    "lora_rank": 64,
+    "lora_target": "all",
+    "loraplus_lr_ratio": 16.0,
+    "neat_packing": true,
+    "optimizer_family": "LoRA plus",
+    "packing": true,
+    "precision": "FP16",
+    "rationale": "Reuse the pre-registered EXP-147 low-LR continuation geometry, but replace uniform class weighting with explicit c-balanced video alignment and exact answer-only replay. The near-even 53.07/46.93 target-token mass is the preservation mechanism.",
+    "scheduler": "cosine",
+    "seed": 202607209,
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0
+  },
+  "run_id": "exp157_answer_only_r0_continuation_v100_v1",
+  "schema": "llm-rec.takeover.exp157-full-launch-preregistration",
+  "schema_version": 1,
+  "status": "LOCKED_BEFORE_TRAINING"
+}

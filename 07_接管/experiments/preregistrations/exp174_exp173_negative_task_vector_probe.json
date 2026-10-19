@@ -1,0 +1,35 @@
+{
+  "schema": "llm-rec.takeover.exp174-negative-task-vector-preregistration",
+  "schema_version": 1,
+  "experiment": "EXP-174",
+  "status": "LOCKED_BEFORE_DERIVATION_MERGE_UPLOAD_OR_FORMAL",
+  "created_at": "2026-07-28T21:30:00+08:00",
+  "objective": "Test one formally motivated counter-direction from the EXP-158 best anchor after the EXP-173 update lost two R0 hits and 0.1697130793432893 total score.",
+  "formal_evidence": {
+    "exp158": {"score": 1.0350521506259462, "r0": 0.2452961672473868, "r0_hits": 8, "r1": 0.14903739601796478, "r2": 0.4857, "r3": 0.1550185873605948, "receipt_sha256": "c24ba496b0db71ea32648a130fd1b06c55a3a4098d442600cf328d1a1c079d74"},
+    "exp173": {"score": 0.8653390712826569, "r0": 0.1839721254355401, "r0_hits": 6, "r1": 0.14624612800325065, "r2": 0.37749999999999995, "r3": 0.15762081784386614, "receipt_sha256": "847daa984b464b535f6499569f9aa709e124478c2dabdfa566485c208aa62225"},
+    "truth_ledger_sha256": "f9e44d6c64c3eb8c40d4070bb776986a633bba8d3fa19331f9206095a463c5b9",
+    "interpretation": "EXP-173 supplies a signed formal directional observation, not a guarantee of local linearity. The counter-direction is an information probe and not a score prediction."
+  },
+  "transform": {
+    "base": "/workspace/LLM-Rec/07_接管/experiments/outputs/onereason_0.8b_exp158_exp157_one_epoch_r0_continuation_merged_bf16",
+    "base_model_sha256": "a7e3d5edb59419c2a15c992b3c5c62c2c5924cd92a91a69e6cd4e7ad9a5defaf",
+    "source_adapter": "/workspace/LLM-Rec/07_接管/experiments/outputs/onereason_0.8b_exp173_exp158_unambiguous_r0_r64_a64_xformers_16k_ga8_fp16",
+    "source_adapter_sha256": "e692f129347263afa026f77c487bed4a73732658d16ceae623a8a16db04c40e6",
+    "source_adapter_config_sha256": "e9ecadc7dbd2314967bfff0c201324450abdfcb44f6b3c65c5eedaaea179d61b",
+    "coefficient": -0.5,
+    "implementation": "Keep every LoRA-A tensor unchanged and multiply every LoRA-B tensor by exactly -0.5 before a safe CPU BF16 merge into EXP-158.",
+    "single_major_variable": "Signed task-vector coefficient; no training, data, tokenizer, architecture, rank, alpha, or inference contract changes."
+  },
+  "coefficient_rationale": "A half-step is fixed before construction as the smallest simple symmetric counter-dose likely to move discrete beam margins while limiting extrapolation. No alpha sweep or local-score selection is allowed.",
+  "launch_gates": [
+    "No truth-ledger score is at least 1.1 and TARGET_1_1_ACHIEVED.json is absent.",
+    "EXP-173 is FORMAL/SUCCEEDED and ingested below EXP-158 with fewer R0 hits.",
+    "Platform active_count is zero and formal remaining is positive.",
+    "No trainer, merge, upload, or formal process is active; GPU is idle.",
+    "/workspace/tmp has at least 8 GiB free before CPU BF16 merge.",
+    "Derived adapter algebra, all-finite scan, safe merge, and FULL lineage audit pass."
+  ],
+  "formal_policy": "Exactly one formal evaluation. Continue counter-direction work only if this fixed half-step establishes a new R0-hit or total-score frontier; never sweep coefficients post hoc.",
+  "forbidden": ["EXP-158 reevaluation", "EXP-173 checkpoint guessing", "coefficient sweep", "claiming linear score response", "new training in this experiment"]
+}

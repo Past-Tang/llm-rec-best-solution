@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "logical_name": "r0_aligned_replay_v1",
+  "replay_dataset": {
+    "path": "04_作战/rft_v2/data_v8t.jsonl",
+    "lines": 474431,
+    "size_bytes": 913742255,
+    "sha256": "5e50344e27c6812f814d25fe720b491b4274dbf78ea8c0e3c3f1351b838870d5"
+  },
+  "aligned_dataset": {
+    "path": "07_接管/experiments/data/r0_aligned_video_v1.jsonl",
+    "lines": 303711,
+    "base_lines": 58387,
+    "size_bytes": 551642299,
+    "sha256": "dc6eb2c71db8835bbf97fb0a130880838fdfe65bf7fb20d1627ca8da7fb29ccb"
+  },
+  "holdout_exclusion": {
+    "path": "07_接管/evaluation/r0_public/generated/holdout.jsonl",
+    "lines": 1024,
+    "size_bytes": 1726842,
+    "sha256": "338a9cf32d00e604e6af0db8c153f3a10c32aa02c7670098f917e56552fd0831"
+  },
+  "pid2sid": {
+    "path": "02_数据/data/Explorer_LLM_Rec_Competition/data/OneReason_Pid2Sid",
+    "files": 198,
+    "rows": 35914095
+  },
+  "pid2caption": {
+    "path": "02_数据/data/Explorer_LLM_Rec_Competition/data/OneReason_Pid2Caption",
+    "files": 136,
+    "rows": 21061327
+  },
+  "selection": {
+    "target_domain": "video/video",
+    "max_views_per_sid": 4,
+    "min_caption_chars": 30,
+    "max_caption_chars": 600,
+    "eval_fraction": 0.02,
+    "selection_salt": "takeover-r0-aligned-replay-v1-20260720"
+  }
+}

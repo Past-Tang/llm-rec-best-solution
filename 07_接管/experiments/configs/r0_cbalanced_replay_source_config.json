@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "logical_name": "r0_cbalanced_replay_v1",
+  "source_dataset": {
+    "path": "07_接管/experiments/data/r0_aligned_replay_v1.jsonl",
+    "lines": 987853,
+    "size_bytes": 1490326121,
+    "sha256": "8c78128b48424af26892d89cad649c959f7e0fc3feac4db267f1e20ab36f8892"
+  },
+  "source_manifest": {
+    "path": "07_接管/experiments/manifests/r0_aligned_replay_v1.manifest.json",
+    "size_bytes": 65320,
+    "sha256": "eedbe4025fe69afb8402478060a303608457efffb5f46bcf857fda4d1c4780f2"
+  },
+  "evaluation_exclusion": {
+    "path": "07_接管/experiments/data/r0_aligned_replay_v1_eval.jsonl",
+    "lines": 3990,
+    "size_bytes": 4627066,
+    "sha256": "d3e7dab4f0d1570b92aa83fa1f3310d16444b47b670c91c8fdb50d383a3b90a1"
+  },
+  "evaluation_manifest": {
+    "path": "07_接管/experiments/manifests/r0_aligned_replay_v1_eval.manifest.json",
+    "size_bytes": 65290,
+    "sha256": "7e9d3aac1414dc39307c0cabaf83cfbf78090937ea3394e2c498ac329c5acd65"
+  },
+  "selection": {
+    "replay_prefix_rows": 473817,
+    "max_unique_sids_per_c": 128,
+    "max_views_per_sid": 1,
+    "selection_salt": "takeover-r0-cbalanced-replay-v1-20260720"
+  }
+}

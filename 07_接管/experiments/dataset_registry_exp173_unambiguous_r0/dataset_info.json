@@ -1,0 +1,24 @@
+{
+  "exp173_exp158_public_answer_only_plus_unambiguous_r0_v1": {
+    "columns": {
+      "history": "history",
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "system": "system"
+    },
+    "file_name": "/workspace/LLM-Rec/07_接管/experiments/data/exp173_exp158_public_answer_only_plus_unambiguous_r0_v1.jsonl",
+    "formatting": "alpaca"
+  },
+  "exp173_exp158_unambiguous_r0_smoke_v1": {
+    "columns": {
+      "history": "history",
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "system": "system"
+    },
+    "file_name": "/workspace/LLM-Rec/07_接管/experiments/data/exp173_exp158_unambiguous_r0_smoke_v1.jsonl",
+    "formatting": "alpaca"
+  }
+}

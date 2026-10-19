@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "logical_name": "r0_aligned_multidomain_replay_v1",
+  "base_dataset": {
+    "path": "07_接管/experiments/data/r0_aligned_replay_v1.jsonl",
+    "lines": 987853,
+    "size_bytes": 1490326121,
+    "sha256": "8c78128b48424af26892d89cad649c959f7e0fc3feac4db267f1e20ab36f8892"
+  },
+  "previous_eval_exclusion": {
+    "path": "07_接管/experiments/data/r0_aligned_replay_v1_eval.jsonl",
+    "lines": 3990,
+    "size_bytes": 4627066,
+    "sha256": "d3e7dab4f0d1570b92aa83fa1f3310d16444b47b670c91c8fdb50d383a3b90a1"
+  },
+  "holdout_exclusion": {
+    "path": "07_接管/evaluation/r0_public/generated/holdout.jsonl",
+    "lines": 1024,
+    "size_bytes": 1726842,
+    "sha256": "338a9cf32d00e604e6af0db8c153f3a10c32aa02c7670098f917e56552fd0831"
+  },
+  "official_alignment": {
+    "path": "02_数据/data/hf_sft_new/SFT/baseline_caption_tag_lists.parquet",
+    "rows": 19204,
+    "size_bytes": 729700717,
+    "sha256": "c307fe6d723ebdebc2d343de3481bdc878f6193d65456e3b933ae7f6b78b8d9d"
+  },
+  "base_manifest": {
+    "path": "07_接管/experiments/manifests/r0_aligned_replay_v1.manifest.json",
+    "size_bytes": 65320,
+    "sha256": "eedbe4025fe69afb8402478060a303608457efffb5f46bcf857fda4d1c4780f2"
+  },
+  "previous_eval_manifest": {
+    "path": "07_接管/experiments/manifests/r0_aligned_replay_v1_eval.manifest.json",
+    "size_bytes": 65290,
+    "sha256": "7e9d3aac1414dc39307c0cabaf83cfbf78090937ea3394e2c498ac329c5acd65"
+  },
+  "official_seed_expected_files": 7,
+  "official_seed_expected_rows": 10384,
+  "official_seed_glob": "02_数据/种子SFT数据/懂物料_part*.jsonl",
+  "selection": {
+    "target_domains": [
+      "prod",
+      "ad",
+      "living"
+    ],
+    "max_views_per_sid": 3,
+    "min_caption_chars": 30,
+    "max_caption_chars": 600,
+    "eval_fraction": 0.02,
+    "minimum_unique_sids": {
+      "prod": 190000,
+      "ad": 75000,
+      "living": 19000
+    },
+    "selection_salt": "takeover-r0-aligned-multidomain-replay-v1-20260720"
+  }
+}

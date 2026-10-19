@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "logical_name": "r0_aligned_video_v1",
+  "base_dataset": {
+    "path": "07_接管/experiments/data/h1_protocol.jsonl",
+    "lines": 58387,
+    "sha256": "b2a6015556bcbedefdd46c25cbd5e57c48d411c1f792ec89742e7abe0d1fe996"
+  },
+  "holdout_exclusion": {
+    "path": "07_接管/evaluation/r0_public/generated/holdout.jsonl",
+    "lines": 1024,
+    "sha256": "338a9cf32d00e604e6af0db8c153f3a10c32aa02c7670098f917e56552fd0831"
+  },
+  "official_alignment": {
+    "path": "02_数据/data/hf_sft_new/SFT/baseline_caption_tag_lists.parquet",
+    "rows": 19204,
+    "sha256": "c307fe6d723ebdebc2d343de3481bdc878f6193d65456e3b933ae7f6b78b8d9d"
+  },
+  "official_seed_expected_files": 7,
+  "official_seed_expected_rows": 10384,
+  "official_seed_glob": "02_数据/种子SFT数据/懂物料_part*.jsonl",
+  "selection": {
+    "target_domain": "video",
+    "max_views_per_sid": 3,
+    "min_caption_chars": 30,
+    "max_caption_chars": 600,
+    "minimum_unique_sids": 200000,
+    "selection_salt": "takeover-r0-aligned-video-v1-20260718"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "schema": "llm-rec.takeover.exp173-design-preregistration",
+  "schema_version": 1,
+  "experiment": "EXP-173",
+  "run_id": "exp173_exp158_unambiguous_r0_continuation_v100_v1",
+  "created_at": "2026-07-28T18:00:00+08:00",
+  "status": "LOCKED_BEFORE_NONZERO_LR_SMOKE",
+  "objective": "Preserve the formally strongest EXP-158 envelope while adding an independently audited, compact description-to-SID information channel that excludes public evaluation SIDs.",
+  "formal_evidence": {
+    "truth_ledger": {
+      "path": "/workspace/LLM-Rec/07_接管/truth_ledger/generated/truth_ledger.json",
+      "sha256": "b4f3313ac8957086751b349efa0a8ea9782fc6cbe1d42c1f6a1f6e7c7f3265d8",
+      "formal_evaluations": 81
+    },
+    "best": {
+      "experiment": "EXP-158",
+      "score": 1.0350521506259462,
+      "r0_hits": 8,
+      "non_r0": 0.7897559833785595,
+      "receipt": "/workspace/LLM-Rec/07_接管/platform/receipts/official_exp158_exp157_one_epoch_r0_continuation_20260726_a_metrics.json",
+      "receipt_sha256": "c24ba496b0db71ea32648a130fd1b06c55a3a4098d442600cf328d1a1c079d74"
+    },
+    "exp167_grid": {
+      "policy": "The preregistered 480, 510, 540, 570 and 600 grid is exhausted; no post-hoc checkpoint extension is allowed.",
+      "scores": {"480": 1.00858830448464, "510": 0.9564010332852205, "540": 0.9815428580548128, "570": 1.0065683447573837, "600": 0.9719789563339278},
+      "best_grid_receipt": "/workspace/LLM-Rec/07_接管/platform/receipts/official_exp172_exp167_step480_20260728_a_metrics.json",
+      "best_grid_receipt_sha256": "8a3e95923d88f7bd29664bd9d1ed8d60f2e1d97ec96ebb3bf4cce0372202cf22"
+    },
+    "decision": "All same-recipe epoch-one probes are below EXP-158. The remaining target gap is primarily discrete R0 hits, so the next experiment must add a new R0 information source rather than another replay checkpoint or a blind full-shape dose."
+  },
+  "initializer": {
+    "path": "/workspace/LLM-Rec/07_接管/experiments/outputs/onereason_0.8b_exp158_exp157_one_epoch_r0_continuation_merged_bf16",
+    "model_sha256": "a7e3d5edb59419c2a15c992b3c5c62c2c5924cd92a91a69e6cd4e7ad9a5defaf",
+    "audit": "/workspace/LLM-Rec/07_接管/experiments/runs/exp158_exp157_one_epoch_duration_v1/audit_manifest.json",
+    "audit_sha256": "ae2735dfc056bf1a640c67a7eb696f4356f4c1179d4ec0896ec14d441dc96edb"
+  },
+  "data": {
+    "full": {"path": "/workspace/LLM-Rec/07_接管/experiments/data/exp173_exp158_public_answer_only_plus_unambiguous_r0_v1.jsonl", "rows": 37879, "sha256": "ac1d53c46dac420040539cbc4d6c2f340a37b6f6199e0a285319149f56845a5a"},
+    "smoke": {"path": "/workspace/LLM-Rec/07_接管/experiments/data/exp173_exp158_unambiguous_r0_smoke_v1.jsonl", "rows": 16, "sha256": "1e282dc595a00f1eba6280b7dd5841c7daec83935a2e96e74e67544327cb5d56"},
+    "manifest": {"path": "/workspace/LLM-Rec/07_接管/experiments/manifests/exp173_exp158_public_answer_only_plus_unambiguous_r0_v1.manifest.json", "sha256": "c142b2c6a47b7fb2620d971197050062427588e3ca47248383825d77c55e43a8"},
+    "builder": {"path": "/workspace/LLM-Rec/07_接管/experiments/build_exp173_dataset.py", "sha256": "d59cf08d0be3dad45926d4e280438f48b5296aeb2e5ead4af3903523a2c2a234"},
+    "source_audit": {"path": "/workspace/LLM-Rec/07_接管/analysis/generated/external_dataset_novelty_answer_only_20260725.json", "sha256": "75b16978fa92360b197929ccc8da8cbdb07a77cd2143fbb8562bee76f2ad578e"},
+    "novel_rows": 5174,
+    "novel_fraction_by_rows": 0.13659283402307347,
+    "isolation": "The locked novel source contains globally unique prompts, zero overlap with the public R0 evaluation SID exclusion, and no baseline prompt-answer pair overlap."
+  },
+  "recipe": {
+    "single_major_intervention": "Add the 5,174 independently sourced unambiguous R0 rows to exact content/order replay of the 32,705 public answer-only rows, as one fresh low-dose LoRA continuation from EXP-158.",
+    "epochs": 1,
+    "learning_rate": 5e-6,
+    "scheduler": "cosine",
+    "warmup_ratio": 0.03,
+    "lora_rank": 64,
+    "lora_alpha": 64,
+    "lora_dropout": 0.05,
+    "lora_target": "all seven attention and MLP projections",
+    "loraplus_lr_ratio": 16.0,
+    "cutoff_len": 16384,
+    "gradient_accumulation_steps": 8,
+    "precision": "FP16",
+    "attention": "xFormers",
+    "liger": true,
+    "seed": 202607210,
+    "smoke_config_sha256": "77c735a16fd60a7d3d6c00fc03456f122fc783d3e164fd950afbfd835b20149b",
+    "full_config_sha256": "53961bfa219cb130ec5e0778cda9dbbed3ab8bb622d15db976f8d7a262a89cda",
+    "registry_sha256": "0d1486a8621bd557b39fb50a6ab6b9cc1f4d914e4e6fe828d3904e87bf20fa12"
+  },
+  "launch_gates": [
+    "No FORMAL/SUCCEEDED truth-ledger score is at least 1.1.",
+    "Fresh platform status has active_count zero.",
+    "No trainer, merge or upload process is active and GPU0 is idle.",
+    "The non-zero-LR V100 smoke has finite loss, finite gradient norm, nonzero LoRA-B update and a PASS audit.",
+    "/workspace/tmp has at least 8 GiB free before smoke and full launch.",
+    "The full worker runs under tmux and Supervisor watchdog remains RUNNING."
+  ],
+  "formal_policy": "After PASS/FULL training and BF16 merge audit, perform exactly one quota-aware formal evaluation. Continue this family only if the ingested receipt reaches 1.1 or provides a new component frontier.",
+  "forbidden": ["EXP-159 repeat", "EXP-166 reevaluation", "additional EXP-167 checkpoints", "BF16 or FlashAttention-2 V100 training", "training below the disk gate", "claiming an efficacy result before a FORMAL/SUCCEEDED receipt is ingested"]
+}

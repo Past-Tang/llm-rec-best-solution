@@ -1,0 +1,47 @@
+### model（v8t 懂用户×1：发射卡0715 卡8；官方种子四线最后一格定价，语义面对齐 r1 演化类任务）
+### 单变量账：vs v8m = 仅 +懂用户×1 2,892 行（+104MB ≈ 字节面 +12%）；初始化 v8g、超参全同。
+### 主预言：P1 r1 方向为正（≥0.107 兑现对齐假设）；P2 r0 逐位恒等（第7案）；P3 r2/P4 r3 带内。
+model_name_or_path: /workspace/LLM-Rec/04_作战/rft_v2/output/onereason_0.8b_sft_v8g
+trust_remote_code: true
+flash_attn: fa2
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+enable_liger_kernel: true
+
+### dataset
+dataset: data_v8t   # 474,431 = data_v8m 471,539 + 懂用户剥壳×1 2,892（以 forge_v8t.stats.json 为准）
+dataset_dir: /workspace/LLM-Rec/02_数据/data/Explorer_LLM_Rec_Competition/demo/LLaMA-Factory/data
+template: qwen3_nothink
+cutoff_len: 32768
+packing: true
+neat_packing: true
+overwrite_cache: false
+preprocessing_num_workers: 16
+dataloader_num_workers: 8
+
+### output
+output_dir: /workspace/LLM-Rec/04_作战/rft_v2/output/onereason_0.8b_sft_v8t
+logging_steps: 5
+save_strategy: steps
+save_steps: 150
+save_total_limit: 2
+plot_loss: true
+overwrite_output_dir: true
+save_only_model: false
+report_to: tensorboard
+logging_dir: /workspace/LLM-Rec/04_作战/rft_v2/output/onereason_0.8b_sft_v8t/tb
+
+### train（LR=1e-5 铁案；四卡0-3×accum4=等效批16；seed 全系一致）
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 4
+learning_rate: 1.0e-5
+num_train_epochs: 1
+lr_scheduler_type: cosine
+warmup_ratio: 0.03
+weight_decay: 0.0
+bf16: true
+pure_bf16: true
+seed: 20260701

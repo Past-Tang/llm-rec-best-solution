@@ -1,0 +1,68 @@
+{
+  "schema": "llm-rec.takeover.exp158-duration-arm-design",
+  "schema_version": 1,
+  "experiment": "EXP-158",
+  "created_at": "2026-07-25T09:05:00+08:00",
+  "status": "LOCKED_BEFORE_EXP157_TRAINING",
+  "objective": "Evaluate the one-epoch checkpoint of the receipt-selected EXP-157 R0 continuation so the approximately seven-hour two-epoch run exposes a controlled duration axis rather than only its terminal checkpoint.",
+  "parent": {
+    "experiment": "EXP-157",
+    "design_path": "07_接管/experiments/preregistrations/exp157_answer_only_r0_compact_design.json",
+    "design_sha256": "acbb4b5c8134b72bc2dc966c24ec169f527756edbb00c26e54e964ce548128b0",
+    "finalizer_path": "07_接管/experiments/finalize_exp157.py",
+    "finalizer_sha256": "e59b38916ec8eb7a561992fe5319c91ac2d0d588c3dd12e9c567059268333dcc",
+    "worker_path": "07_接管/experiments/run_exp157_queued_worker.sh",
+    "worker_sha256": "596bef909b39d31d59cdd52fd12955958116608c60f721582d7a55c2a1f9ddd8"
+  },
+  "immutable_inputs": {
+    "dataset_path": "07_接管/experiments/data/exp157_answer_only_r0_compact_v2.jsonl",
+    "dataset_sha256": "78ee84eefeadb677b8f627073a71fe100223c85fc684213a4ea77da857653ef9",
+    "gap_audit_path": "07_接管/autopilot/current_1_1_gap_audit_20260725T0858.json",
+    "gap_audit_sha256": "e06ceadd7be8fb322c4b2dc4f4d01c7bb0f673196e2d513cfeeeef730036bb94",
+    "packing_audit_path": "07_接管/autopilot/exp157_preprocessing_packing_audit_20260725T0846.json",
+    "packing_audit_sha256": "27ed0e7d37e30e9c6b831253b5a4873eb1871800d84aa19758c22469ac75ef77"
+  },
+  "implementation": {
+    "finalizer_path": "07_接管/experiments/finalize_exp158.py",
+    "finalizer_sha256": "a0518dea619a0ac60b1b60c025f7c9ec531b7126b7ba49270f9b219ce5cc476c",
+    "worker_path": "07_接管/experiments/run_exp158_checkpoint_worker.sh",
+    "worker_sha256": "65745524d81a3fe074e8026e4f1d0cfa6714202fe7bb70ddf0eb3dc62d4cb5dd",
+    "formal_relay_path": "07_接管/experiments/submit_formal_candidate.sh",
+    "formal_relay_sha256": "5eb64c46c1b5d77d286baed70dc4efe241040009b920d9ce61514b891a7d0d32",
+    "tests_path": "07_接管/experiments/test_finalize_exp158.py",
+    "tests_sha256": "78727f0d69217764b2d7881b4ca6adbcc0b8b6e8ac1e6c47754f27743f8b07aa"
+  },
+  "controlled_difference": {
+    "changed": "Training exposure stops after the first completed epoch checkpoint.",
+    "unchanged": "Receipt-selected merged BF16 anchor, dataset bytes and order, tokenizer, qwen3_nothink template, FP16 xFormers Liger runtime, rank64 alpha64 LoRA plus, dropout0.05, LR5e-6, cosine schedule, warmup0.03, GA8, seed202607209 and every other parent setting.",
+    "selection": "Choose the unique retained checkpoint whose trainer_state epoch is 1.0 within serialization tolerance and whose max_steps equals the parent dynamic max_steps. Never choose by training loss."
+  },
+  "evidence": {
+    "historical_reason": "Training duration changed formal component balance in prior public091 families, and two epochs can over-specialize the explicit R0 replay while one epoch may better retain the anchor's non-R0 capability.",
+    "runtime_reason": "A deterministic tokenizer sample estimates at least 505 GA8 steps and about 3.37 hours per epoch, so retaining the first epoch costs no additional GPU training and yields an independently auditable candidate.",
+    "claim_boundary": "The checkpoint is an information-efficient controlled candidate, not a score prediction."
+  },
+  "capture_gate": [
+    "The EXP-157 receipt gate opened because EXP-152 through EXP-156 were formally below 1.1.",
+    "EXP-157 completed a real non-zero-LR smoke before full training.",
+    "The parent one-epoch checkpoint has a complete optimizer save, finite adapter tensors, the expected LoRA geometry, and exact trainer_state epoch evidence.",
+    "The checkpoint is copied before any cleanup and every copied artifact matches its source SHA."
+  ],
+  "formal_gate": [
+    "EXP-157 terminal adapter and parent audit are PASS/FULL and the parent durable upload receipt exists.",
+    "EXP-157 terminal formal receipt is ingested below 1.1; if it reaches 1.1, EXP-158 stops without consuming quota.",
+    "EXP-158 is CPU BF16 merged against the exact same receipt-bound anchor and its merged tensors are finite and audit-bound.",
+    "Live status confirms remaining quota and active_count below three immediately before the one formal submission."
+  ],
+  "forbidden": [
+    "Additional GPU training for EXP-158.",
+    "Choosing a checkpoint using local loss or an unbound path.",
+    "Submitting EXP-158 before the EXP-157 terminal receipt is ingested.",
+    "Continuing or interpolating EXP-158 without its own formal component evidence."
+  ],
+  "formal_identity": {
+    "model_name": "takeover_exp158_exp157_one_epoch_r0_continuation_20260726",
+    "task_name": "eval_exp158_exp157_one_epoch_r0_continuation_20260726_a",
+    "label": "exp158_exp157_one_epoch_r0_continuation_20260726_a"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "base_dataset": {
+    "lines": 58387,
+    "path": "07_接管/experiments/data/h1_protocol.jsonl",
+    "sha256": "b2a6015556bcbedefdd46c25cbd5e57c48d411c1f792ec89742e7abe0d1fe996"
+  },
+  "holdout_exclusion": {
+    "lines": 1024,
+    "path": "07_接管/evaluation/r0_public/generated/holdout.jsonl",
+    "sha256": "338a9cf32d00e604e6af0db8c153f3a10c32aa02c7670098f917e56552fd0831"
+  },
+  "official_seed_expected_files": 7,
+  "official_seed_expected_rows": 10384,
+  "official_seed_glob": "02_数据/种子SFT数据/懂物料_part*.jsonl",
+  "public_lut": {
+    "path": "02_数据/data/hf_sft_new/sid_semantic_lut.parquet",
+    "rows": 21773149,
+    "sha256": "22fbefd4550a7cea17fea025876bc0faaf724f35be0e9e0130e5ffc8d5944d10"
+  },
+  "selection": {
+    "additional_unique_sid_quota": {
+      "ad": 6000,
+      "living": 4000,
+      "prod": 12000,
+      "video": 20000
+    },
+    "max_caption_chars": 600,
+    "min_caption_chars": 30,
+    "min_caption_share": 0.6,
+    "oversample_factor": 3,
+    "selection_salt": "takeover-r0-scale100-v1-20260717",
+    "top_n_pid_fraction": 0.5
+  }
+}

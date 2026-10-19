@@ -1,0 +1,24 @@
+{
+  "takeover_r0_cbalanced_replay_v1": {
+    "file_name": "/workspace/LLM-Rec/07_接管/experiments/data/r0_cbalanced_replay_v1.jsonl",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "system": "system",
+      "history": "history"
+    }
+  },
+  "takeover_r0_aligned_replay_v1_eval": {
+    "file_name": "/workspace/LLM-Rec/07_接管/experiments/data/r0_aligned_replay_v1_eval.jsonl",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "system": "system",
+      "history": "history"
+    }
+  }
+}

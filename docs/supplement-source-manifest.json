@@ -1,0 +1,314 @@
+{
+  "description": "Source provenance and current file hashes for the code/configuration supplement. Historical source hashes are before path redaction and documented repairs.",
+  "files": [
+    {
+      "source": "archived_workspace/07_接管/experiments/build_r0_cbalanced_replay.py",
+      "destination": "07_接管/experiments/build_r0_cbalanced_replay.py",
+      "source_sha256": "b57067b5a37b1658ff6b6544c7e4bb2868b7a5e23f51f1566f1c588111edc575",
+      "export_sha256": "b57067b5a37b1658ff6b6544c7e4bb2868b7a5e23f51f1566f1c588111edc575"
+    },
+    {
+      "source": "archived_workspace/07_接管/experiments/build_r0_aligned_replay.py",
+      "destination": "07_接管/experiments/build_r0_aligned_replay.py",
+      "source_sha256": "0bb90a838596a12d172671ecac05c40f9e0208c11a9399dcf5f9fd3e2eeb0eac",
+      "export_sha256": "0bb90a838596a12d172671ecac05c40f9e0208c11a9399dcf5f9fd3e2eeb0eac"
+    },
+    {
+      "source": "archived_workspace/07_接管/experiments/build_r0_multiview.py",
+      "destination": "07_接管/experiments/build_r0_multiview.py",
+      "source_sha256": "0df20aa0241977e3d723ce62162ebe10cd57877d3bac806686c830b1f5e2775c",
+      "export_sha256": "0df20aa0241977e3d723ce62162ebe10cd57877d3bac806686c830b1f5e2775c"
+    },
+    {
+      "source": "archived_workspace/07_接管/experiments/build_r0_scale_candidate.py",
+      "destination": "07_接管/experiments/build_r0_scale_candidate.py",
+      "source_sha256": "716e4b467b4e772d562f0901da8d6041b20cc525f86e213ddef1712dbf015f66",
+      "export_sha256": "716e4b467b4e772d562f0901da8d6041b20cc525f86e213ddef1712dbf015f66"
+    },
+    {
+      "source": "archived_workspace/07_接管/experiments/build_exp132_public091.py",
+      "destination": "07_接管/experiments/build_exp132_public091.py",
+      "source_sha256": "b1fed8e6090cc16bc16f4eb2f5cd1d9ed4e9bf1b02464c42a7eeaa50cfc65540",
+      "export_sha256": "b1fed8e6090cc16bc16f4eb2f5cd1d9ed4e9bf1b02464c42a7eeaa50cfc65540"
+    },
+    {
+      "source": "archived_workspace/07_接管/experiments/configs/r0_cbalanced_replay_source_config.json",
+      "destination": "07_接管/experiments/configs/r0_cbalanced_replay_source_config.json",
+      "source_sha256": "5c59034d62ea46da31b7c31ed6f8072535f3d7aa49ba48b6aade4fc6ecd68639",
+      "export_sha256": "5c59034d62ea46da31b7c31ed6f8072535f3d7aa49ba48b6aade4fc6ecd68639"
+    },
+    {
+      "source": "archived_workspace/07_接管/experiments/configs/r0_aligned_replay_source_config.json",
+      "destination": "07_接管/experiments/configs/r0_aligned_replay_source_config.json",
+      "source_sha256": "4167d2f9f2c3b5539fa7fe56ee9bae30183e7802872286b5c9165e12592f6d07",
+      "export_sha256": "4167d2f9f2c3b5539fa7fe56ee9bae30183e7802872286b5c9165e12592f6d07"
+    },
+    {
+      "source": "archived_workspace/07_接管/experiments/configs/sft_takeover_r0_aligned_replay_v8t_freeze8_sg16.yaml",
+      "destination": "07_接管/experiments/configs/sft_takeover_r0_aligned_replay_v8t_freeze8_sg16.yaml",
+      "source_sha256": "4c03af70830fbb0af791bf17644f7f8a148601f0f62b26d586745abffaf42791",
+      "export_sha256": "de6cb38caa9fcfb6cbb77160bf5f80542e6c331ba3d48676d531d8452403bc4e"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/audit_exp157_checkpoint.py",
+      "destination": "07_接管/experiments/audit_exp157_checkpoint.py",
+      "source_sha256": "74a9c8a50857a46db98c2cebd1918828e47e507ca98cbbbfd9049ea9612aea2c",
+      "export_sha256": "74a9c8a50857a46db98c2cebd1918828e47e507ca98cbbbfd9049ea9612aea2c"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/build_exp142_public091_answer_only.py",
+      "destination": "07_接管/experiments/build_exp142_public091_answer_only.py",
+      "source_sha256": "857de58a76a1738aa85bb5e6ffb864e34eac50c1f73e2d959088605b35bfd40e",
+      "export_sha256": "857de58a76a1738aa85bb5e6ffb864e34eac50c1f73e2d959088605b35bfd40e"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/build_exp157_answer_only_r0_compact.py",
+      "destination": "07_接管/experiments/build_exp157_answer_only_r0_compact.py",
+      "source_sha256": "ee7eec7014931a589688be93a4b5736a32ebfc2323ef2c9e302f84d6fee15a39",
+      "export_sha256": "ee7eec7014931a589688be93a4b5736a32ebfc2323ef2c9e302f84d6fee15a39"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/build_exp157_schema_v2.py",
+      "destination": "07_接管/experiments/build_exp157_schema_v2.py",
+      "source_sha256": "bb764ed349b6b2aedb2afe561e467f3f30c8d742ff64298730f439b9958a13d9",
+      "export_sha256": "bb764ed349b6b2aedb2afe561e467f3f30c8d742ff64298730f439b9958a13d9"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/build_exp161_external_unambiguous_r0.py",
+      "destination": "07_接管/experiments/build_exp161_external_unambiguous_r0.py",
+      "source_sha256": "118401955680b0613d2d395917f6621a748f016b3a0e763abdbd3cfaefb98155",
+      "export_sha256": "240e6eacb317b37f92da83137c550145bc8390d06bd3eeaa3b5081ba35450e16"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/build_exp173_dataset.py",
+      "destination": "07_接管/experiments/build_exp173_dataset.py",
+      "source_sha256": "d59cf08d0be3dad45926d4e280438f48b5296aeb2e5ead4af3903523a2c2a234",
+      "export_sha256": "d59cf08d0be3dad45926d4e280438f48b5296aeb2e5ead4af3903523a2c2a234"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/configs/exp136_public091_v66_rslora_loraplus_r128_a16_xformers_16k_ga8_fp16.yaml",
+      "destination": "07_接管/experiments/configs/exp136_public091_v66_rslora_loraplus_r128_a16_xformers_16k_ga8_fp16.yaml",
+      "source_sha256": "44cf53a4dac325999f62ba5de04984cf40790d52d7735e7fedc217f8131e7169",
+      "export_sha256": "ac7d5c5bafd8c5dab2c6f4bcc8cac6a858bc2bb46530db711d88fb044805b3ef"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/configs/exp157_answer_only_r0_continuation_r64_a64_xformers_16k_ga8_fp16.yaml",
+      "destination": "07_接管/experiments/configs/exp157_answer_only_r0_continuation_r64_a64_xformers_16k_ga8_fp16.yaml",
+      "source_sha256": "f1729d70334dcf568ab93e75e706e52d9cf21c35526ba6ee4142eb2315393c24",
+      "export_sha256": "94d7ab65052d351e7bdf7d1c137263bdd4c580169c0d40b20781db2cdbb19bfa"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/configs/exp173_exp158_unambiguous_r0_r64_a64_xformers_16k_ga8_fp16.yaml",
+      "destination": "07_接管/experiments/configs/exp173_exp158_unambiguous_r0_r64_a64_xformers_16k_ga8_fp16.yaml",
+      "source_sha256": "53961bfa219cb130ec5e0778cda9dbbed3ab8bb622d15db976f8d7a262a89cda",
+      "export_sha256": "44731311c4aec9cf2e4804d647b53194b115ce39645650e0f22cacb17ee85c1d"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/configs/smoke_exp157_answer_only_r0_continuation_r64_a64_xformers_fp16.yaml",
+      "destination": "07_接管/experiments/configs/smoke_exp157_answer_only_r0_continuation_r64_a64_xformers_fp16.yaml",
+      "source_sha256": "db28ea90ccd4ed77ea3930b5ca1faabf174934f525b2cede4dc8cbc4ee5ca94b",
+      "export_sha256": "0af7fec3215df5553e7fc35efad8b60111aaec6f5c03d93f70b3e4032d671f23"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/dataset_registry_exp157_answer_only_r0_compact/dataset_info.json",
+      "destination": "07_接管/experiments/dataset_registry_exp157_answer_only_r0_compact/dataset_info.json",
+      "source_sha256": "fc5cfd3ff3354da9a8bd34fba972ac631606a404a6d71b1fb64031c6c9b7ee68",
+      "export_sha256": "2dea96e535f24c3d07fd8f9b64cd6b419ac84daccc209113b0cc32f775740bc7"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/dataset_registry_exp157_smoke/dataset_info.json",
+      "destination": "07_接管/experiments/dataset_registry_exp157_smoke/dataset_info.json",
+      "source_sha256": "2c0cb2843dd6e191506c9ad9bdf019614625beeaf02c6f45b7dcd3daf7a58755",
+      "export_sha256": "38d50e832ca8ccb4d523b9bfca6d2fddd23e5571ef25cf0a2d58b4a1f39b9bb6"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/dataset_registry_exp173_unambiguous_r0/dataset_info.json",
+      "destination": "07_接管/experiments/dataset_registry_exp173_unambiguous_r0/dataset_info.json",
+      "source_sha256": "0d1486a8621bd557b39fb50a6ab6b9cc1f4d914e4e6fe828d3904e87bf20fa12",
+      "export_sha256": "19a17d3e5300f3350a89acab15413de5c74e188381f007a20924a60ae74f8cc7"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/finalize_exp135.py",
+      "destination": "07_接管/experiments/finalize_exp135.py",
+      "source_sha256": "fbc4f46d837b785e6fd9cc5a3a23377dcaa8de856ef2a79a78e816565d7579a9",
+      "export_sha256": "c44b65bb9919360b214f01fe17aa10b21d971e5fad28d85821ff2f7fd270d95f"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/finalize_exp136.py",
+      "destination": "07_接管/experiments/finalize_exp136.py",
+      "source_sha256": "7c2e8143c798b14cdbcf3292a444c833d6ae16fc2c1ed0c75a8ab64466282caf",
+      "export_sha256": "7c2e8143c798b14cdbcf3292a444c833d6ae16fc2c1ed0c75a8ab64466282caf"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/finalize_exp157.py",
+      "destination": "07_接管/experiments/finalize_exp157.py",
+      "source_sha256": "e59b38916ec8eb7a561992fe5319c91ac2d0d588c3dd12e9c567059268333dcc",
+      "export_sha256": "e59b38916ec8eb7a561992fe5319c91ac2d0d588c3dd12e9c567059268333dcc"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/finalize_exp158.py",
+      "destination": "07_接管/experiments/finalize_exp158.py",
+      "source_sha256": "a0518dea619a0ac60b1b60c025f7c9ec531b7126b7ba49270f9b219ce5cc476c",
+      "export_sha256": "a0518dea619a0ac60b1b60c025f7c9ec531b7126b7ba49270f9b219ce5cc476c"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/finalize_exp173.py",
+      "destination": "07_接管/experiments/finalize_exp173.py",
+      "source_sha256": "b8d86aa9a736680aa3779f31d72d094bc7056775907e70a59117493f1d432d4c",
+      "export_sha256": "c3c08a0b5313bbf48f71a9f12d46c7eb9392c8dfa031637289a6367e407c4160"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/materialize_exp157.py",
+      "destination": "07_接管/experiments/materialize_exp157.py",
+      "source_sha256": "44e6bb8cfd473532620e8c80604276e4da2de5b4f865a6adcf451f5312c9ef90",
+      "export_sha256": "dc6c275d20d9377ece443142aecfe3738a00e0287bd354ad36db2e58a4226c49"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/prepare_exp174.py",
+      "destination": "07_接管/experiments/prepare_exp174.py",
+      "source_sha256": "9b77325b2b5c638dacefe669bf11c2139f7c3d770bff6b8f78ccaa627778905d",
+      "export_sha256": "1b519e90668f520cde95174c36a64916e549bb79a70be163eb02116e228f6094"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/preregistrations/exp136_public091_v66_v100_16k_ga8_v1.json",
+      "destination": "07_接管/experiments/preregistrations/exp136_public091_v66_v100_16k_ga8_v1.json",
+      "source_sha256": "2ab225aefab5eed06945243b2ed9cf3f0ea5606ef3a0465247b11e01fd9fde18",
+      "export_sha256": "2ab225aefab5eed06945243b2ed9cf3f0ea5606ef3a0465247b11e01fd9fde18"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/preregistrations/exp157_answer_only_r0_compact_design.json",
+      "destination": "07_接管/experiments/preregistrations/exp157_answer_only_r0_compact_design.json",
+      "source_sha256": "acbb4b5c8134b72bc2dc966c24ec169f527756edbb00c26e54e964ce548128b0",
+      "export_sha256": "acbb4b5c8134b72bc2dc966c24ec169f527756edbb00c26e54e964ce548128b0"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/preregistrations/exp157_answer_only_r0_continuation_full_launch.json",
+      "destination": "07_接管/experiments/preregistrations/exp157_answer_only_r0_continuation_full_launch.json",
+      "source_sha256": "05e6a36d43a3fdd150a7c386c9da4eb2704bb39df941a935f97f4ef7c5d724d4",
+      "export_sha256": "9623ee25bc5d7012f0f651fda3840aa4f706cb5cf2bcb4b4172c23054ff10544"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/preregistrations/exp157_answer_only_r0_continuation_launch.json",
+      "destination": "07_接管/experiments/preregistrations/exp157_answer_only_r0_continuation_launch.json",
+      "source_sha256": "a2ee2c811b4cba0c82085aa2e8c6e24bb05ce1c414a42850bcd836aef71451f5",
+      "export_sha256": "5826ff743c64b846e2860e38838c055e4196a3ce7c8f38e15c7d7191529c98d0"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/preregistrations/exp158_exp157_one_epoch_duration_design.json",
+      "destination": "07_接管/experiments/preregistrations/exp158_exp157_one_epoch_duration_design.json",
+      "source_sha256": "ad35fa9f68d267082173982af1e70f3b6c6d857c2f9bfc02b298eb825002ea5d",
+      "export_sha256": "ad35fa9f68d267082173982af1e70f3b6c6d857c2f9bfc02b298eb825002ea5d"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/preregistrations/exp173_exp158_unambiguous_r0_continuation_design.json",
+      "destination": "07_接管/experiments/preregistrations/exp173_exp158_unambiguous_r0_continuation_design.json",
+      "source_sha256": "f01b479dba5e135b9369b421acdeca0af7f881425f90ae4af345478adb551d0c",
+      "export_sha256": "8af597a0ac715e09e2ae33a0cb2f665e00768e5fc7c5ae3fb42ed46b703e516d"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/preregistrations/exp174_exp173_negative_task_vector_probe.json",
+      "destination": "07_接管/experiments/preregistrations/exp174_exp173_negative_task_vector_probe.json",
+      "source_sha256": "957a7149fe8ddc903b9bab50fb8d7cb60e6a891223a5ae1fade54bef142306e1",
+      "export_sha256": "8092589767dc9fdbff03f4e105b52eb206008ce6693ca5616c28a553e34663eb"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/test_build_exp142_answer_only.py",
+      "destination": "07_接管/experiments/test_build_exp142_answer_only.py",
+      "source_sha256": "5843356aa3580ab732014ae02f9f8f77d5052ba781ded342a1065affcdb11793",
+      "export_sha256": "e1295edb563dbc284295b909767a70f31bbdf324f44b70e2eb3cb9a2930ecba1"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/test_build_exp161_external_unambiguous_r0.py",
+      "destination": "07_接管/experiments/test_build_exp161_external_unambiguous_r0.py",
+      "source_sha256": "17b586635522cc917a13caaba1ef95d83f69e6ff51e433375fb70bde1dcbf31a",
+      "export_sha256": "17b586635522cc917a13caaba1ef95d83f69e6ff51e433375fb70bde1dcbf31a"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/verify_exp157_dataset.py",
+      "destination": "07_接管/experiments/verify_exp157_dataset.py",
+      "source_sha256": "e132911e21097f6e2573d1777f69a4404f2a6cf2eada2dfdc11b29a4d9ad5837",
+      "export_sha256": "e132911e21097f6e2573d1777f69a4404f2a6cf2eada2dfdc11b29a4d9ad5837"
+    },
+    {
+      "source": "archived_recipe/07_接管/experiments/verify_exp173_dataset.py",
+      "destination": "07_接管/experiments/verify_exp173_dataset.py",
+      "source_sha256": "28d4a58543d503cfff3f8c6913b18a9ad8901606e0f9c55eaf4fda8c3bb4ff70",
+      "export_sha256": "28d4a58543d503cfff3f8c6913b18a9ad8901606e0f9c55eaf4fda8c3bb4ff70"
+    },
+    {
+      "source": "exp158_core/07_接管/packages/exp158_repro_core_20260727/rebuild_models.py",
+      "destination": "07_接管/packages/exp158_repro_core_20260727/rebuild_models.py",
+      "source_sha256": "8703aa28b1ea7902d16800c067efa1fb493d64cea7f5796080d052e4f794360d",
+      "export_sha256": "8703aa28b1ea7902d16800c067efa1fb493d64cea7f5796080d052e4f794360d"
+    },
+    {
+      "source": "archived_workspace/07_接管/experiments/build_r0_aligned_video.py",
+      "destination": "07_接管/experiments/build_r0_aligned_video.py",
+      "source_sha256": "81bcc09650ced65b5b6bec0ad1358dab975c6b7e2770e38fdd1f1eb9e07a4aa3",
+      "export_sha256": "81bcc09650ced65b5b6bec0ad1358dab975c6b7e2770e38fdd1f1eb9e07a4aa3"
+    },
+    {
+      "source": "archived_workspace/07_接管/experiments/build_r0_aligned_multidomain_replay.py",
+      "destination": "07_接管/experiments/build_r0_aligned_multidomain_replay.py",
+      "source_sha256": "47e7cfd4f4992b7eb2d7785c66e04fb1ba8f207e439b523ac29d2a63346ecd61",
+      "export_sha256": "47e7cfd4f4992b7eb2d7785c66e04fb1ba8f207e439b523ac29d2a63346ecd61"
+    },
+    {
+      "source": "archived_workspace/07_接管/experiments/configs/r0_aligned_video_source_config.json",
+      "destination": "07_接管/experiments/configs/r0_aligned_video_source_config.json",
+      "source_sha256": "2d5115b84e5ac5221b729cac362dead27dda235c9f2c694df59b199cf9e1b218",
+      "export_sha256": "2d5115b84e5ac5221b729cac362dead27dda235c9f2c694df59b199cf9e1b218"
+    },
+    {
+      "source": "archived_workspace/07_接管/experiments/configs/r0_aligned_multidomain_replay_source_config.json",
+      "destination": "07_接管/experiments/configs/r0_aligned_multidomain_replay_source_config.json",
+      "source_sha256": "4307a1f6755222cf64997bdc5b3444d4d00747f956b8114508d611cbc5dbffb1",
+      "export_sha256": "4307a1f6755222cf64997bdc5b3444d4d00747f956b8114508d611cbc5dbffb1"
+    },
+    {
+      "source": "archived_workspace/07_接管/experiments/configs/r0_scale100_source_config.json",
+      "destination": "07_接管/experiments/configs/r0_scale100_source_config.json",
+      "source_sha256": "e8efb874cb60c610d34dfcb37f51e4c3dcc6344a4f9f9d9354250cb4434a33b0",
+      "export_sha256": "e8efb874cb60c610d34dfcb37f51e4c3dcc6344a4f9f9d9354250cb4434a33b0"
+    },
+    {
+      "source": "archived_workspace/07_接管/experiments/dataset_registry_r0_cbalanced_replay/dataset_info.json",
+      "destination": "07_接管/experiments/dataset_registry_r0_cbalanced_replay/dataset_info.json",
+      "source_sha256": "75a05f9db264c172abfd42ec258df7400345e9358522f597daac329989ca0ba2",
+      "export_sha256": "adb0e9652ec0267ddf9a213275a84af49705a10742a5619d398b9150816eaea6"
+    },
+    {
+      "source": "archived_workspace/07_接管/experiments/dataset_registry_r0_aligned_replay/dataset_info.json",
+      "destination": "07_接管/experiments/dataset_registry_r0_aligned_replay/dataset_info.json",
+      "source_sha256": "d41541809d68ba60277022b50a55050ae983b0e2484c3f94f02d6e749cc44e44",
+      "export_sha256": "f4410d7d8cf9ab9b1a8829eb89bf78af1ac9f11494b67e737506b6a81d8da0fe"
+    },
+    {
+      "source": "archived_workspace/04_作战/rft_v2/sft_v8t.yaml",
+      "destination": "04_作战/rft_v2/sft_v8t.yaml",
+      "source_sha256": "dd1f6275ed77b6b57fae383b3bdcb32c6f87f2ca865c11c71e0c90d1ff42d17f",
+      "export_sha256": "f6856f94e3ffcceadbc59687880a6e18f60c8abb3a94124e6eae822b00b48c61"
+    },
+    {
+      "source": "archived_workspace/04_作战/rft_v2/forge_v8t.py",
+      "destination": "04_作战/rft_v2/forge_v8t.py",
+      "source_sha256": "64155613a05eec7c7e204dba8422183fbd98e704980ba7123782fdee3eb75c1e",
+      "export_sha256": "8dfcf4affb04c6047c4203b045cd93bf90d0149709507d95b4fc215eec7bbc1b"
+    },
+    {
+      "source": "repository maintenance",
+      "destination": "NOTICE.md",
+      "export_sha256": "7ac9e1205f285da77ec6884b7a6f19eb97fbddcb0647c788a3a33eb31e0b73a8"
+    },
+    {
+      "source": "repository maintenance",
+      "destination": "README.md",
+      "export_sha256": "b2547a9f270fbefe4d88c3b1d45a3fd46722d7e74931ba86992f0fee94e011c6"
+    },
+    {
+      "source": "repository maintenance",
+      "destination": "docs/training-recipe.md",
+      "export_sha256": "8977479e68b8c665ea89722275c0cebbcd14c678711fc855b4d301867d3539f5"
+    }
+  ]
+}
