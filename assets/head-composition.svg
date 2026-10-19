@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">只在选定的输出头行上合成</title><desc id="desc">块高为示意，不代表参数量比例；三个输入都使用同一套词表与张量布局。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#536b7c"/></marker></defs>
+<rect width="1200" height="720" rx="18" fill="#f7fafc"/>
+<g font-family="Noto Sans CJK SC, Noto Sans SC, sans-serif">
+<text x="38" y="52" font-size="29" fill="#19334a" font-weight="700" text-anchor="start">只在选定的输出头行上合成</text>
+<text x="38" y="84" font-size="16" fill="#536b7c" font-weight="400" text-anchor="start">块高为示意，不代表参数量比例；三个输入都使用同一套词表与张量布局。</text>
+<text x="44" y="133" font-size="24" fill="#266fa5" font-weight="700" text-anchor="start">Expert</text>
+<rect x="44" y="153" width="230" height="250" rx="12" fill="#fff" stroke="#cedce5"/>
+<rect x="56" y="165" width="206" height="65" rx="4" fill="#edf2f5" stroke="#cedce5"/>
+<text x="69" y="204" font-size="19" fill="#19334a" font-weight="400" text-anchor="start">其余词表行</text>
+<rect x="56" y="238" width="206" height="42" rx="4" fill="#dcebf7" stroke="#cedce5"/>
+<text x="69" y="266" font-size="18" fill="#19334a" font-weight="400" text-anchor="start">SID a</text>
+<rect x="56" y="288" width="206" height="42" rx="4" fill="#e1f1e8" stroke="#cedce5"/>
+<text x="69" y="316" font-size="18" fill="#19334a" font-weight="400" text-anchor="start">SID b</text>
+<rect x="56" y="338" width="206" height="42" rx="4" fill="#fff0d6" stroke="#cedce5"/>
+<text x="69" y="366" font-size="18" fill="#19334a" font-weight="400" text-anchor="start">SID c</text>
+<text x="324" y="133" font-size="24" fill="#266fa5" font-weight="700" text-anchor="start">Ancestor</text>
+<rect x="324" y="153" width="230" height="250" rx="12" fill="#fff" stroke="#cedce5"/>
+<rect x="336" y="165" width="206" height="65" rx="4" fill="#edf2f5" stroke="#cedce5"/>
+<text x="349" y="204" font-size="19" fill="#19334a" font-weight="400" text-anchor="start">其余词表行</text>
+<rect x="336" y="238" width="206" height="42" rx="4" fill="#dcebf7" stroke="#cedce5"/>
+<text x="349" y="266" font-size="18" fill="#19334a" font-weight="400" text-anchor="start">SID a</text>
+<rect x="336" y="288" width="206" height="42" rx="4" fill="#e1f1e8" stroke="#cedce5"/>
+<text x="349" y="316" font-size="18" fill="#19334a" font-weight="400" text-anchor="start">SID b</text>
+<rect x="336" y="338" width="206" height="42" rx="4" fill="#fff0d6" stroke="#cedce5"/>
+<text x="349" y="366" font-size="18" fill="#19334a" font-weight="400" text-anchor="start">SID c</text>
+<text x="820" y="133" font-size="24" fill="#266fa5" font-weight="700" text-anchor="start">Target → Final</text>
+<rect x="820" y="153" width="326" height="250" rx="12" fill="#fff" stroke="#cedce5"/>
+<rect x="832" y="165" width="302" height="65" rx="4" fill="#edf2f5" stroke="#cedce5"/>
+<text x="845" y="204" font-size="19" fill="#19334a" font-weight="400" text-anchor="start">其余词表行</text>
+<rect x="832" y="238" width="302" height="42" rx="4" fill="#dcebf7" stroke="#cedce5"/>
+<text x="845" y="266" font-size="18" fill="#19334a" font-weight="400" text-anchor="start">SID a</text>
+<rect x="832" y="288" width="302" height="42" rx="4" fill="#e1f1e8" stroke="#cedce5"/>
+<text x="845" y="316" font-size="18" fill="#19334a" font-weight="400" text-anchor="start">SID b</text>
+<rect x="832" y="338" width="302" height="42" rx="4" fill="#fff0d6" stroke="#cedce5"/>
+<text x="845" y="366" font-size="18" fill="#19334a" font-weight="400" text-anchor="start">SID c</text>
+<text x="298" y="290" font-size="30" fill="#19334a" font-weight="400" text-anchor="middle">−</text>
+<rect x="580" y="215" width="202" height="134" rx="12" fill="#fff5e5" stroke="#cedce5"/>
+<text x="600" y="249" font-size="22" fill="#bd862e" font-weight="700" text-anchor="start">ΔW</text>
+<text x="600" y="282" font-size="17" fill="#19334a" font-weight="400" text-anchor="start">Expert − Ancestor</text>
+<text x="600" y="309" font-size="17" fill="#19334a" font-weight="400" text-anchor="start">仅提取 a / b / c</text>
+<path d="M559,281 L574,281" fill="none" stroke="#536b7c" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M785,281 L814,281" fill="none" stroke="#536b7c" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="936" y="438" font-size="22" fill="#bd862e" font-weight="700" text-anchor="middle">−0.5 × ΔW</text>
+<text x="42" y="456" font-size="24" fill="#19334a" font-weight="700" text-anchor="start">对选中行：Wfinal = Wtarget − 0.5 × (Wexpert − Wancestor)</text>
+<rect x="42" y="485" width="535" height="124" rx="12" fill="#fff" stroke="#cedce5"/>
+<text x="62" y="519" font-size="22" fill="#266fa5" font-weight="700" text-anchor="start">参数例子</text>
+<text x="62" y="552" font-size="17" fill="#19334a" font-weight="400" text-anchor="start">Target = 0.20，Expert − Ancestor = +0.04</text>
+<text x="62" y="579" font-size="17" fill="#19334a" font-weight="400" text-anchor="start">Final = 0.20 − 0.5 × 0.04 = 0.18</text>
+<rect x="600" y="485" width="548" height="124" rx="12" fill="#fff" stroke="#cedce5"/>
+<text x="620" y="519" font-size="22" fill="#266fa5" font-weight="700" text-anchor="start">作用位置</text>
+<text x="620" y="552" font-size="17" fill="#19334a" font-weight="400" text-anchor="start">输出头将隐藏状态映射为各 token 的分数</text>
+<text x="620" y="579" font-size="17" fill="#19334a" font-weight="400" text-anchor="start">主干和输入 embedding 参数取自 Target</text>
+<text x="42" y="654" font-size="21" fill="#19334a" font-weight="400" text-anchor="start">a：[151669, 159861)    b：[159861, 168053)    c：[168053, 176245)</text>
+<text x="42" y="688" font-size="16" fill="#536b7c" font-weight="400" text-anchor="start">数值例子仅演示运算；后续自回归输出仍取决于输入与已经生成的 token。</text>
+</g></svg>
